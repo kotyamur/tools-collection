@@ -51,9 +51,27 @@ body {
     background-color: transparent;
 }
 
+.load-btn {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+.transparent-btn:hover,
+.load-btn:hover {
+    color: #fdf5ff;
+    background-color: var(--accent-color);
+}
+
 .accent-btn {
     color: #fdf5ff;
     background-color: var(--accent-color);
+}
+
+.accent-btn:hover {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+    background-color: transparent;
 }
 
 .container {
