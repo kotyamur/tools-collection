@@ -1,0 +1,59 @@
+:root {
+    --main-heading-color: rgba(255, 255, 255, 0.9);
+    --secondary-heading-color: rgba(255, 255, 255, 0.78);
+    --main-text-color: rgba(255, 255, 255, 0.55);
+    --input-text-color: rgba(255, 255, 255, 0.38);
+    --first-background-color: #1E252B;
+    --secondary-background-color: #283036;
+    --hover-color: #FFFFFF;
+    --accent-color: #FF6E30;
+    --secondary-accent-color: #FFFFFF;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--main-text-color);
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    background-color: var(--first-background-color);
+}
+
+.review-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 214%;
+    letter-spacing: 0.01em;
+    color: var(--secondary-heading-color);
+}
+
+/* .logo-text {
+    font-family: "Lora", sans-serif;
+} */
+
+.btn {
+    min-width: 106px;
+    padding: 12px 28px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fdf5ff;
+    background-color: var(--accent-color);
+}
+
+.container {
+    width: 1254px;
+    padding: 0 15px;
+    margin-right: auto;
+    margin-left: auto;
+    outline: 1px dashed #f44336;
+}
+
+.flex {
+    display: flex;
+}
