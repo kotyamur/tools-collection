@@ -73,7 +73,8 @@ form {
     border-radius: 15px;
 }
   /* Псевдоелемент, що створює градієнтний бордер */
-form::before {
+.search-form::before,
+.join-form::before {
     content: '';
     position: absolute;
     width: calc(100% + 2px);
@@ -82,7 +83,7 @@ form::before {
     top: -1px;
     left: -1px;
     z-index: -1;
-    background-image: linear-gradient(120deg, #ff7e5f, #feb47b);
+    background-image: linear-gradient(120deg, #343A40, #343a4000);
     border-radius: 15px;
 }
 
@@ -113,6 +114,12 @@ form input {
 
 .flex {
     display: flex;
+}
+
+section {
+    max-width: 1440px; 
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* header */
@@ -186,6 +193,13 @@ form input {
 }
 
 /* hero */
+.hero {
+    padding-top: 46px;
+    background-image: url(../images/bg-hero.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+}
 
 .hero-heading {
     width: 600px;
@@ -209,8 +223,13 @@ form input {
 
 .search-form {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     margin-bottom: 110px;
+    padding-left: 16px;
+}
+
+.search-form:focus-within::before {
+    background-image: linear-gradient(120deg, #EA8C4F, #587298);
 }
   
 .search-form > input::placeholder {
@@ -218,9 +237,34 @@ form input {
     color: var(--input-text-color);
 }
 
+.search-form > svg {
+    stroke: white;
+}
+
+.search-form > svg:hover {
+    stroke: var(--accent-color);
+}
+
+.search-form > .accent-btn {
+    margin-left: auto;
+}
+
 .icons-list {
     display: flex;
     gap: 8px;
+}
+
+.icons-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 8px;
+}
+
+.icons-list-item:hover {
+    background-color: var(--secondary-background-color);
 }
 
 /* popular */
