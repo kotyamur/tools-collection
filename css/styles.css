@@ -283,6 +283,7 @@ section {
     margin-right: auto;
     margin-left: auto;
     line-height: 1.67;
+    text-align: center;
 }
 
 .popular-list {
@@ -315,31 +316,36 @@ section {
 } */
 
 .popular-item:hover {
+    position: relative;
+    bottom: 20px;
     border-radius: 15px;
     backdrop-filter: blur(50px);
     background: rgba(40, 48, 54, 0.6);
 }
 
 .tools-name {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
     margin-bottom: 30px;
 }
 
-.tools-name > h3 {
+.tools-name h3 {
     margin-bottom: 4px;
     font-weight: 500;
     font-size: 24px;
     color: rgba(255, 255, 255, 0.78);
 }
 
-.popular-item:hover .tools-name > p {
+.popular-item:hover .tools-name p {
     color: #FFA537;
 }
 
-.tools-name > p {
+.tools-name p {
     color: rgba(255, 165, 55, 0.55);
 }
 
-.popular-item:hover .tools-name > h3 {
+.popular-item:hover .tools-name h3 {
     color: var(--main-heading-color);
 }
 
@@ -365,9 +371,16 @@ section {
     gap: 12px;
 }
 
-.call-action-list > li {
+.call-action-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 42px;
     height: 42px;
+    border-radius: 8px;
+}
+.call-action-item:hover {
+    background-color: var(--secondary-background-color);
 }
 
 .popular .load-btn {
