@@ -126,10 +126,28 @@ form input {
 }
 
 .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-right: 256px;
     font-weight: 600;
     font-size: 22px;
     color: var(--main-heading-color);
+}
+
+.header-logo > div,
+.footer-logo > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+}
+
+.header-logo:hover > div,
+.footer-logo:hover > div {
+    background-color: var(--accent-color);;
 }
 
 .header-nav {
@@ -144,9 +162,20 @@ form input {
     gap: 36px;
 }
 
+.header-category > .icon {
+    vertical-align: bottom;
+    stroke: #FFFFFF;
+    stroke-opacity: 0.55;
+}
+
+.header-category:hover > .icon {
+    stroke: var(--accent-color);
+    stroke-opacity: 1;
+}
+
 .buttons-list {
     display: flex;
-    gap: 4px;
+    gap: 12px;
     margin-left: auto;
 }
 
@@ -290,6 +319,11 @@ form input {
 .call-action-list {
     display: flex;
     gap: 12px;
+}
+
+.call-action-list > li {
+    width: 42px;
+    height: 42px;
 }
 
 .popular .load-btn {
@@ -484,8 +518,14 @@ form input {
     font-size: 16px;
 }
 
+.footer a:hover{
+    color: var(--accent-color);
+}
+
 .footer-logo {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 25px;
     font-weight: 600;
     font-size: 22px;
