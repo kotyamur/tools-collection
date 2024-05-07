@@ -103,7 +103,7 @@ form input {
     padding: 0 15px;
     margin-right: auto;
     margin-left: auto;
-    outline: 1px dashed #f44336;
+    /* outline: 1px dashed #f44336; */
 }
 
 .flex {
