@@ -48,8 +48,8 @@ body {
 
 .transparent-btn:hover,
 .load-btn:hover {
-    color: #fdf5ff;
-    background-color: var(--accent-color);
+    border: 1px solid #ff4d00;
+    color: var(--accent-color);
 }
 
 .accent-btn {
@@ -58,9 +58,7 @@ body {
 }
 
 .accent-btn:hover {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--accent-color);
-    background-color: transparent;
+    background-color: #ff4d00;
 }
 
 /* Загальний стиль для form */
@@ -186,12 +184,6 @@ section {
     margin-left: auto;
 }
 
-.buttons-list .transparent-btn:hover {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--accent-color);
-    background-color: transparent;
-}
-
 /* hero */
 .hero {
     padding-top: 46px;
@@ -239,10 +231,6 @@ section {
 
 .search-form > svg {
     stroke: white;
-}
-
-.search-form > svg:hover {
-    stroke: var(--accent-color);
 }
 
 .search-form > .accent-btn {
@@ -383,6 +371,18 @@ section {
     background-color: var(--secondary-background-color);
 }
 
+.popular-item:hover .tools-call-action > .btn {
+    color: #fdf5ff;
+    background-color: var(--accent-color);
+}
+
+.tools-call-action > .btn.transparent-btn:hover {
+    /* border: 1px solid #ff4d00;
+    color: var(--accent-color);
+    background-color: transparent; */
+    background-color: #ff4d00;
+}
+
 .popular .load-btn {
     display: block;
     margin-right: auto;
@@ -390,10 +390,23 @@ section {
 }
 
 /* brands */
-.brands {
+.brands > .container {
     padding: 56px 82px;
     text-align: center;
+    /* backdrop-filter: blur(50px); */
+    /* background: rgba(44, 53, 61, 0.2); */
+    border-radius: 25px;
+    /* border: 2px solid transparent; */
+    background-image: linear-gradient(
+        to right,
+        rgba(44, 53, 61, 0.2),
+        rgba(44, 53, 61, 0.2)
+      ), radial-gradient(circle at top left, rgba(255, 72, 66, 0.4) 1%, transparent 9%);
 }
+
+/* .brands > .container::before {
+    content: '';
+} */
 
 .brands-heading {
     margin-bottom: 56px;
