@@ -29,17 +29,20 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 16px;
+    transition: color 500ms linear, background-color 500ms ease-in-out;
 }
 
 .transparent-btn {
     color: var(--secondary-heading-color);
     background-color: transparent;
+    transition: color 500ms linear, border 500ms ease-in-out;
 }
 
 .load-btn {
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--accent-color);
     background-color: transparent;
+    transition: color 500ms linear, border 500ms ease-in-out;
 }
 
 .transparent-btn:hover,
@@ -51,6 +54,7 @@ body {
 .accent-btn {
     color: #fdf5ff;
     background-color: var(--accent-color);
+    transition: background-color 500ms linear;
 }
 
 .accent-btn:hover {
@@ -122,6 +126,10 @@ section {
     padding-bottom: 58px;
 }
 
+.header a {
+    transition: color 500ms linear;
+}
+
 .header a:hover{
     color: var(--accent-color);
 }
@@ -144,6 +152,7 @@ section {
     width: 38px;
     height: 38px;
     border-radius: 8px;
+    transition: background-color 500ms linear;
 }
 
 .header-logo:hover > div,
@@ -167,6 +176,7 @@ section {
     vertical-align: bottom;
     stroke: #FFFFFF;
     stroke-opacity: 0.55;
+    transition: stroke 500ms linear, stroke-opacity 500ms ease-in-out;
 }
 
 .header-category:hover > .icon {
@@ -245,6 +255,7 @@ section {
     width: 58px;
     height: 58px;
     border-radius: 8px;
+    transition: background-color 500ms linear;
 }
 
 .icons-list-item:hover {
@@ -320,6 +331,7 @@ section {
     font-weight: 500;
     font-size: 24px;
     color: rgba(255, 255, 255, 0.78);
+    transition: color 500ms linear;
 }
 
 .popular-item:hover .tools-name p {
@@ -328,6 +340,7 @@ section {
 
 .tools-name p {
     color: rgba(255, 165, 55, 0.55);
+    transition: color 500ms linear;
 }
 
 .popular-item:hover .tools-name h3 {
@@ -339,6 +352,7 @@ section {
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0em;
+    transition: color 500ms linear;
 }
 
 .popular-item:hover .popular-description {
@@ -363,6 +377,7 @@ section {
     width: 42px;
     height: 42px;
     border-radius: 8px;
+    transition: background-color 500ms linear;
 }
 .call-action-item:hover {
     background-color: var(--secondary-background-color);
@@ -450,6 +465,7 @@ section {
 .newcomer-item {
     width: calc((100% - 24px) / 2);
     padding: 28px 22px;
+    
 }
 
 .newcomer-item:hover {
@@ -465,6 +481,7 @@ section {
     margin-bottom: 30px;
     font-size: 14px;
     line-height: 214%;
+    transition: color 500ms linear;
 }
 
 .newcomer-item:hover .newcomer-description {
@@ -492,6 +509,7 @@ section {
     font-size: 14px;
     line-height: 2.14;
     color: rgba(255, 165, 55, 0.55);
+    transition: color 500ms linear;
 }
 
 .newcomer-item:hover .newcomer-tool p {
@@ -630,6 +648,10 @@ section {
 .footer {
     font-weight: 500;
     font-size: 16px;
+}
+
+.footer a {
+    transition: color 500ms linear;
 }
 
 .footer a:hover{
