@@ -300,24 +300,36 @@
         <section class="testimonial">
             <div class="container">
                 <div class="testimonial-gallery">
-                    <div>
+                    <div class="gallery-prev-btn">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 36L18 24L30 12" stroke="white" stroke-opacity="0.28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M30 36L18 24L30 12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-autor">
-                            <img src="./images/man.png">
-                            <div>
-                                <h3>Ronald Richards</h3>
-                                <p>Product Manager</p>
+                    <div class="testimonial-cards">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-autor">
+                                <img src="./images/man.png">
+                                <div>
+                                    <h3>Ronald Richards</h3>
+                                    <p>Product Manager</p>
+                                </div>
                             </div>
+                            <p class="testimonial-card-text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
                         </div>
-                        <p class="testimonial-card-text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-autor">
+                                <img src="./images/man.png">
+                                <div>
+                                    <h3>Ronald Richards</h3>
+                                    <p>Product Manager</p>
+                                </div>
+                            </div>
+                            <p class="testimonial-card-text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                        </div>
                     </div>
-                    <div>
+                    <div class="gallery-next-btn">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 36L30 24L18 12" stroke="#FF6E30" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 36L30 24L18 12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                 </div>
@@ -400,5 +412,18 @@
     </footer>
     
 </body>
+<script>
+    const slides = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.gallery-prev-btn');
+    const nextBtn = document.querySelector('.gallery-next-btn');
+
+    let indexOpacity = 1;
+    slides[indexOpacity].style.opacity = 1;
+    
+    nextBtn.addEventListener("click", () => {
+        indexOpacity = indexOpacity + 1;
+        slides[indexOpacity].style.opacity = 1;
+    });
+</script>
 
 </html>

@@ -545,10 +545,36 @@ section {
     margin-bottom: 100px;
 }
 
+.testimonial-cards {
+    position: relative;
+    width: 920px;
+    height: 476px;
+}
+
+.gallery-next-btn > svg,
+.gallery-prev-btn > svg {
+    stroke: #FFFFFF;
+    stroke-opacity: 0.28;
+}
+
+.gallery-next-btn:hover > svg,
+.gallery-prev-btn:hover > svg {
+    stroke: #FF6E30;
+    stroke-opacity: 1;
+}
+
 .testimonial-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
     gap: 56px;
     align-items: center;
+    opacity: 0;
+}
+
+.testimonial-card:first-child {
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0.263), rgba(255, 0, 0, 0.221));
 }
 
 .testimonial-card-text {
