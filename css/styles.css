@@ -580,16 +580,19 @@ section {
     transition: opacity 500ms linear;
 }
 
-.testimonial-card:first-child .testimonial-card-text {
-    text-shadow: 5px 5px rgba(255, 0, 0, 0.1);
+.testimonial-card:first-child .testimonial-card-text,
+.testimonial-card:first-child .testimonial-card-autor h3 {
+    text-shadow: 7px 7px 7px rgba(255, 255, 255, 0.1), 5px 5px 5px rgba(255, 0, 0, 0.3);
 }
 
-.testimonial-card:nth-child(2) .testimonial-card-text {
-    text-shadow: 5px 5px rgba(0, 255, 0, 0.1);
+.testimonial-card:nth-child(2) .testimonial-card-text,
+.testimonial-card:nth-child(2) .testimonial-card-autor h3 {
+    text-shadow: 7px 7px 7px rgba(255, 233, 233, 0.1), 5px 5px 5px rgba(0, 255, 0, 0.3);
 }
 
-.testimonial-card:last-child .testimonial-card-text {
-    text-shadow: 5px 5px rgba(0, 0, 255, 0.1);
+.testimonial-card:last-child .testimonial-card-text,
+.testimonial-card:last-child .testimonial-card-autor h3 {
+    text-shadow: 7px 7px 7px rgba(255, 233, 233, 0.1), 5px 5px 5px rgba(0, 0, 255, 0.3);
 }
 
 .testimonial-card-text {
@@ -655,6 +658,14 @@ section {
     display: flex;
     gap: 18px;
     justify-content: center;
+}
+
+.testimonial-gallery-btns svg {
+    fill: #283036;
+}
+
+.testimonial-btn.current > svg {
+    fill: #FF6E30;
 }
 
 /* join */

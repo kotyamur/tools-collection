@@ -314,27 +314,33 @@
                                     <p>Product Manager</p>
                                 </div>
                             </div>
-                            <p class="testimonial-card-text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                            <p class="testimonial-card-text">
+                                Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.
+                            </p>
                         </div>
                         <div class="testimonial-card">
                             <div class="testimonial-card-autor">
                                 <img src="./images/man1.png" width="399" height="492">
                                 <div>
-                                    <h3>Ronald Richards</h3>
-                                    <p>Product Manager</p>
+                                    <h3>Pablo Noches</h3>
+                                    <p>Frontend Developer</p>
                                 </div>
                             </div>
-                            <p class="testimonial-card-text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                            <p class="testimonial-card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique veritatis iste at distinctio consequuntur, inventore recusandae ratione earum reprehenderit itaque provident, magnam voluptates consequatur aspernatur et, quasi assumenda vero? Velit, ratione iure! Facere distinctio fugit neque recusandae, quam iure? Odit?
+                            </p>
                         </div>
                         <div class="testimonial-card">
                             <div class="testimonial-card-autor">
                                 <img src="./images/man1.png" width="399" height="492">
                                 <div>
-                                    <h3>Ronald Richards</h3>
-                                    <p>Product Manager</p>
+                                    <h3>Juan Perez</h3>
+                                    <p>UI Designer</p>
                                 </div>
                             </div>
-                            <p class="testimonial-card-text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                            <p class="testimonial-card-text">
+                                Magnam hic quisquam nostrum atque maiores inventore, sequi natus eveniet vero nihil similique esse mollitia ducimus neque quam ipsum ut iusto cupiditate odio illo recusandae! At deserunt soluta, accusamus iusto perferendis recusandae porro consectetur quod vel perspiciatis odio vitae quia minus enim!
+                            </p>
                         </div>
                     </div>
                     <button class="gallery-next-btn">
@@ -344,19 +350,19 @@
                     </button>
                 </div>
                 <ul class="testimonial-gallery-btns">
-                    <li>
+                    <li class="testimonial-btn">
                         <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="44" height="6" rx="3" fill="#283036"/>
+                            <rect width="44" height="6" rx="3"/>
                         </svg>
                     </li>
-                    <li>
+                    <li class="testimonial-btn">
                         <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="44" height="6" rx="3" fill="#FF6E30"/>
+                            <rect width="44" height="6" rx="3"/>
                         </svg>
                     </li>
-                    <li>
+                    <li class="testimonial-btn">
                         <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="44" height="6" rx="3" fill="#283036"/>
+                            <rect width="44" height="6" rx="3"/>
                         </svg>
                     </li>
                 </ul>
@@ -426,13 +432,16 @@
     const slides = document.querySelectorAll('.testimonial-card');
     const prevBtn = document.querySelector('.gallery-prev-btn');
     const nextBtn = document.querySelector('.gallery-next-btn');
+    const pagination = document.querySelectorAll('.testimonial-btn');
 
     let indexOpacity = 0;
     slides[indexOpacity].style.opacity = 1;
+    pagination[indexOpacity].classList.add("current");
     
     nextBtn.addEventListener("click", () => {
         for (let i = 0; i < slides.length; i += 1) {
             slides[i].style.opacity = 0;
+            pagination[i].classList.remove("current");
         }
         
         if(indexOpacity === slides.length - 1) {
@@ -441,11 +450,13 @@
             indexOpacity = indexOpacity + 1;
         }
         slides[indexOpacity].style.opacity = 1;
+        pagination[indexOpacity].classList.add("current");
     });
 
     prevBtn.addEventListener("click", () => {
         for (let i = 0; i < slides.length; i += 1) {
             slides[i].style.opacity = 0;
+            pagination[i].classList.remove("current");
         }
         if(indexOpacity === 0) {
             indexOpacity = slides.length - 1;
@@ -453,6 +464,7 @@
             indexOpacity = indexOpacity - 1;
         }
         slides[indexOpacity].style.opacity = 1;
+        pagination[indexOpacity].classList.add("current");
     });
 </script>
 
