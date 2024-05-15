@@ -300,15 +300,15 @@
         <section class="testimonial">
             <div class="container">
                 <div class="testimonial-gallery">
-                    <div class="gallery-prev-btn">
+                    <button class="gallery-prev-btn">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M30 36L18 24L30 12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </div>
+                    </button>
                     <div class="testimonial-cards">
                         <div class="testimonial-card">
                             <div class="testimonial-card-autor">
-                                <img src="./images/man.png">
+                                <img src="./images/man1.png" width="399" height="492">
                                 <div>
                                     <h3>Ronald Richards</h3>
                                     <p>Product Manager</p>
@@ -318,7 +318,17 @@
                         </div>
                         <div class="testimonial-card">
                             <div class="testimonial-card-autor">
-                                <img src="./images/man.png">
+                                <img src="./images/man1.png" width="399" height="492">
+                                <div>
+                                    <h3>Ronald Richards</h3>
+                                    <p>Product Manager</p>
+                                </div>
+                            </div>
+                            <p class="testimonial-card-text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-autor">
+                                <img src="./images/man1.png" width="399" height="492">
                                 <div>
                                     <h3>Ronald Richards</h3>
                                     <p>Product Manager</p>
@@ -327,11 +337,11 @@
                             <p class="testimonial-card-text">Incididunt cillum do sint sint enim ullamco id deserunt mollit qui reprehenderit do. Velit ex tempor cillum ad sint occaecat. Do nulla velit labore occaecat do deserunt Lorem magna officia incididunt consectetur amet. Sunt consectetur veniam minim ex commodo sint non. Occaecat aute officia excepteur non laboris id qui ad.</p>
                         </div>
                     </div>
-                    <div class="gallery-next-btn">
+                    <button class="gallery-next-btn">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18 36L30 24L18 12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </div>
+                    </button>
                 </div>
                 <ul class="testimonial-gallery-btns">
                     <li>
@@ -417,11 +427,31 @@
     const prevBtn = document.querySelector('.gallery-prev-btn');
     const nextBtn = document.querySelector('.gallery-next-btn');
 
-    let indexOpacity = 1;
+    let indexOpacity = 0;
     slides[indexOpacity].style.opacity = 1;
     
     nextBtn.addEventListener("click", () => {
-        indexOpacity = indexOpacity + 1;
+        for (let i = 0; i < slides.length; i += 1) {
+            slides[i].style.opacity = 0;
+        }
+        
+        if(indexOpacity === slides.length - 1) {
+            indexOpacity = 0;
+        } else {
+            indexOpacity = indexOpacity + 1;
+        }
+        slides[indexOpacity].style.opacity = 1;
+    });
+
+    prevBtn.addEventListener("click", () => {
+        for (let i = 0; i < slides.length; i += 1) {
+            slides[i].style.opacity = 0;
+        }
+        if(indexOpacity === 0) {
+            indexOpacity = slides.length - 1;
+        } else {
+            indexOpacity = indexOpacity - 1;
+        }
         slides[indexOpacity].style.opacity = 1;
     });
 </script>

@@ -551,6 +551,12 @@ section {
     height: 476px;
 }
 
+.gallery-next-btn,
+.gallery-prev-btn {
+    background-color: transparent;
+    border: none;
+}
+
 .gallery-next-btn > svg,
 .gallery-prev-btn > svg {
     stroke: #FFFFFF;
@@ -571,10 +577,19 @@ section {
     gap: 56px;
     align-items: center;
     opacity: 0;
+    transition: opacity 500ms linear;
 }
 
-.testimonial-card:first-child {
-    background-image: linear-gradient(to right, rgba(255, 0, 0, 0.263), rgba(255, 0, 0, 0.221));
+.testimonial-card:first-child .testimonial-card-text {
+    text-shadow: 5px 5px rgba(255, 0, 0, 0.1);
+}
+
+.testimonial-card:nth-child(2) .testimonial-card-text {
+    text-shadow: 5px 5px rgba(0, 255, 0, 0.1);
+}
+
+.testimonial-card:last-child .testimonial-card-text {
+    text-shadow: 5px 5px rgba(0, 0, 255, 0.1);
 }
 
 .testimonial-card-text {
@@ -606,6 +621,9 @@ section {
 .testimonial-card-autor {
     position: relative;
     width: 400px;
+    background-image: url('../images/circle.png');
+    background-position: bottom 25px right 19px;
+    background-repeat: no-repeat;
 }
 
 .testimonial-card-autor > div {
