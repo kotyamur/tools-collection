@@ -351,21 +351,21 @@
                 </div>
                 <ul class="testimonial-gallery-btns">
                     <li>
-                        <button type="button"  class="testimonial-btn">
+                        <button type="button"  class="testimonial-btn" data-index="0">
                             <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="44" height="6" rx="3"/>
                             </svg>
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="testimonial-btn">
+                        <button type="button" class="testimonial-btn" data-index="1">
                             <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="44" height="6" rx="3"/>
                             </svg>
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="testimonial-btn">
+                        <button type="button" class="testimonial-btn" data-index="2">
                             <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="44" height="6" rx="3"/>
                             </svg>
@@ -446,50 +446,31 @@
     pagination[indexOpacity].classList.add("current");
     
     nextBtn.addEventListener("click", () => {
-        for (let i = 0; i < slides.length; i += 1) {
-            slides[i].style.opacity = 0;
-            pagination[i].classList.remove("current");
-        }
-        
-        if(indexOpacity === slides.length - 1) {
-            indexOpacity = 0;
-        } else {
-            indexOpacity = indexOpacity + 1;
-        }
-        slides[indexOpacity].style.opacity = 1;
-        pagination[indexOpacity].classList.add("current");
+        updateSlides((indexOpacity + 1) % slides.length);
     });
 
     prevBtn.addEventListener("click", () => {
-        for (let i = 0; i < slides.length; i += 1) {
-            slides[i].style.opacity = 0;
-            pagination[i].classList.remove("current");
-        }
-        if(indexOpacity === 0) {
-            indexOpacity = slides.length - 1;
-        } else {
-            indexOpacity = indexOpacity - 1;
-        }
-        slides[indexOpacity].style.opacity = 1;
-        pagination[indexOpacity].classList.add("current");
+        updateSlides((indexOpacity - 1 + slides.length) % slides.length);
     });
 
     const handlePaginationClick = (event) => {
-
         const clickedButton = event.target.closest('.testimonial-btn');
         if (!clickedButton) return;
+
         const index = Array.prototype.indexOf.call(pagination, clickedButton);
-
         if (index !== -1) {
-            for (let i = 0; i < slides.length; i += 1) {
-                slides[i].style.opacity = 0;
-                pagination[i].classList.remove("current");
-            }
-
-            indexOpacity = index;
-            slides[indexOpacity].style.opacity = 1;
-            pagination[indexOpacity].classList.add("current");
+            updateSlides(index);
         }
+    };
+
+    const updateSlides = (newIndex) => {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.opacity = 0;
+            pagination[i].classList.remove("current");
+        }
+        indexOpacity = newIndex;
+        slides[indexOpacity].style.opacity = 1;
+        pagination[indexOpacity].classList.add("current");
     };
 
     paginationParent.addEventListener("click", handlePaginationClick);
