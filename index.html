@@ -350,20 +350,26 @@
                     </button>
                 </div>
                 <ul class="testimonial-gallery-btns">
-                    <li class="testimonial-btn">
-                        <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="44" height="6" rx="3"/>
-                        </svg>
+                    <li>
+                        <button type="button"  class="testimonial-btn">
+                            <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="44" height="6" rx="3"/>
+                            </svg>
+                        </button>
                     </li>
-                    <li class="testimonial-btn">
-                        <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="44" height="6" rx="3"/>
-                        </svg>
+                    <li>
+                        <button type="button" class="testimonial-btn">
+                            <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="44" height="6" rx="3"/>
+                            </svg>
+                        </button>
                     </li>
-                    <li class="testimonial-btn">
-                        <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="44" height="6" rx="3"/>
-                        </svg>
+                    <li>
+                        <button type="button" class="testimonial-btn">
+                            <svg width="44" height="6" viewBox="0 0 44 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="44" height="6" rx="3"/>
+                            </svg>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -433,6 +439,7 @@
     const prevBtn = document.querySelector('.gallery-prev-btn');
     const nextBtn = document.querySelector('.gallery-next-btn');
     const pagination = document.querySelectorAll('.testimonial-btn');
+    const paginationParent = document.querySelector('.testimonial-gallery-btns');
 
     let indexOpacity = 0;
     slides[indexOpacity].style.opacity = 1;
@@ -466,6 +473,27 @@
         slides[indexOpacity].style.opacity = 1;
         pagination[indexOpacity].classList.add("current");
     });
+
+    const handlePaginationClick = (event) => {
+
+        const clickedButton = event.target.closest('.testimonial-btn');
+        if (!clickedButton) return;
+        const index = Array.prototype.indexOf.call(pagination, clickedButton);
+
+        if (index !== -1) {
+            for (let i = 0; i < slides.length; i += 1) {
+                slides[i].style.opacity = 0;
+                pagination[i].classList.remove("current");
+            }
+
+            indexOpacity = index;
+            slides[indexOpacity].style.opacity = 1;
+            pagination[indexOpacity].classList.add("current");
+        }
+    };
+
+    paginationParent.addEventListener("click", handlePaginationClick);
+
 </script>
 
 </html>
