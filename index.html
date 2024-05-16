@@ -457,8 +457,8 @@
         const clickedButton = event.target.closest('.testimonial-btn');
         if (!clickedButton) return;
 
-        const index = Array.prototype.indexOf.call(pagination, clickedButton);
-        if (index !== -1) {
+        const index = parseInt(clickedButton.getAttribute('data-index'), 10);
+        if (!isNaN(index)) {
             updateSlides(index);
         }
     };
